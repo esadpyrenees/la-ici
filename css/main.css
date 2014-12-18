@@ -1,0 +1,37 @@
+#test, button { position: absolute; z-index: 999}
+
+html,body { height: 100%}
+
+body { 
+        font-family: 'bebas';
+        background: url(../img/IMG_4803.jpg) no-repeat; 
+        background-size: cover; 
+        overflow: hidden;
+        }
+    
+    .fragments .block {
+        display: block;
+        max-width: 350px;
+        position: absolute;
+        z-index: 3000;
+        top:0; left: 0; right: 0; bottom: 0;
+    }
+    .fragments .text { 
+        position: absolute; 
+        opacity: 0;
+        -moz-transition: all 200ms ease-out;
+        -webkit-transition: all 200ms ease-out;
+        transition: all 600ms ease-out;
+        color:white;
+    }
+    .fragments .visible { opacity: .9}
+    
+
+
+    #sons { 
+        position: absolute; 
+        height: 70px; 
+        left: 0; right: 0; bottom: 10px;
+        }
+        .son:first-child { padding-left: 50px}
+        .swiper-scrollbar { bottom: 10px; height: 10px; position: absolute; z-index: 56}
