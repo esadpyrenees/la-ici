@@ -24,12 +24,9 @@ var texte = {
         $blocks.append($block);
         $block.css({
             'top': Math.random() * (wheight - 300),
-            'left': Math.random() * (wwidth - 350) + 350
+            'left': Math.random() * (wwidth - 350) + 350,
+            'background':'red'
         });
-
-
-        // appelle l’autodestruction du block
-        texte.deleteBlock($block);
 
         // Sélectionne les fragments au sein de la source
         for(var i = 0; i < number_of_fragments; i++){
@@ -43,19 +40,39 @@ var texte = {
         for (var i = 0; i < selected_fragments.length; i++) {
             var $text = $('<div class="text">'+ selected_fragments[i] +' </div>')
             
+            // original top value
+            var otop = Math.random() * 50 + 50;
+            $text.attr('data-otop', otop)
             $text.css({
-                'top': Math.random() * 50 + 50,
+                'top': otop,
                 'left': Math.random() * 50 - 350,
-                'font-size':Math.random() * 30 + 12
+                'font-size':Math.random() * 30 + 16
             })
             $block.append($text);
+            $text.drags();
             $text.wait(i * randomize(50,200)).addClass('visible');
 
         };
 
-        var s = setTimeout(function(){
+        // insert blocks recursively
+        fragments_timeout = setTimeout(function(){
         	texte.insertFragments(fragments, 3);
         }, randomize(3000, 8000)); // 1-2 seconds
+
+        // appelle l’autodestruction du block
+        texte.deleteBlock($block);
+
+        // hover
+        var $texts = $block.find('.text');
+        $block.on('hover',function(){
+            console.log('eeeeeee')
+        })
+
+
+    },
+    destroy:function(){
+        $blocks.empty();
+        clearTimeout(fragments_timeout)
     },
 
     deleteBlock: function($block){

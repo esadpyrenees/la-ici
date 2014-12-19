@@ -227,7 +227,7 @@
 .mejs-controls .mejs-pause button {
 	
 	background-position: 0 -16px;
-	.mejs-playing 
+	
 }
 
 .mejs-controls .mejs-stop button {
@@ -236,7 +236,9 @@
 
 
 .mejs-container .mejs-controls .mejs-button.mejs-play button {
-	width: 100%
+	position: absolute;
+	width: 100%;
+	z-index: 800
 }
 
 /* Start: Play/Pause/Stop */
@@ -251,12 +253,14 @@
 
 .mejs-controls .mejs-time-rail span, .mejs-controls .mejs-time-rail a {
 	display: block;
-	position: absolute;
+	position: relative;
 	width: 180px;
 	height: 10px;
 	cursor: pointer;
 	background: #333;
 }
+
+.mejs-controls .mejs-time-rail span.mejs-time-current { position: absolute; top: 0}
 
 .mejs-controls .mejs-time-rail .mejs-time-total {
 	margin: 5px;

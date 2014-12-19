@@ -3,8 +3,8 @@ var video = {
 	init : function(){
 		BV = new $.BigVideo({useFlashForFirefox:false});
 	    BV.init();
-	    BV.show('media/video/river.mp4', {
-	    	altSource:'media/video/river.ogv',
+	    BV.show('media/video/entreelaici.mp4', {
+	    	altSource:'media/video/entreelaici.ogv',
 	    	ambient:true
 	    });
 	},
@@ -17,16 +17,10 @@ var video = {
 	    	altSource:ogv,
 	    	ambient:true
 	    });
-	}
+	},
 
-	fade: function(dir, fallback){
-		$bvel = $('.big-video-wrap');
-		if(dir=='out'){
-			$bvel.fadeOut()
-		} else {
-			$bvel.fadeIn()
-		}
-		fallback();
+	destroy:function(){
+		BV.getPlayer().dispose();
 	}
 	
 }

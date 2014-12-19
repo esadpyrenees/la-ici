@@ -10,11 +10,13 @@ var mouse = {
 		$('body').on('mousemove', function(e){
 
 			percent = Math.round(e.pageY/wheight * 100);
-			volume = 0.3 + ((percent/100)/1.66666);
-			//console.log(volume)
-			current_player.setVolume(volume);
-			$('#sons').css('opacity',percent/100)
-			$('.fragments').css('opacity',1-percent/100)
+			volume = percent/100;
+			
+			if(current_player != undefined){
+				current_player.setVolume(volume);	
+			}
+			
+			$('.mejs-audio.playing').css('opacity',percent/100)
 			
 			if(e.pageY>wheight/2){
 				

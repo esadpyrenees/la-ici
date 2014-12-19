@@ -7,34 +7,80 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/main.css">
 
         <!-- lib -->
-        <link rel="stylesheet" href="js/me/mediaelementplayer.min.css">
+        <link rel="stylesheet" href="js/me/mediaelementplayer.css">
         <link rel="stylesheet" href="js/bv/bigvideo.css">
-        
+        <link rel="stylesheet" href="css/idangerous.swiper.css">
+        <link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">        
         <!-- app -->
+        <link rel="stylesheet" href="css/fonts/bebas/stylesheet.css">
         <link rel="stylesheet" href="css/main.css">
 
+
         <script src="js/libs/modernizr-2.6.2.min.js"></script>
+        <style type="text/css" media="screen">
+            
+        </style>
     </head>
     <body>
 
+        <!-- les sons -->
+        <div class="swiper-container" id="sons">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide sound-section" data-section="avant" data-section-url="section-01.html">
+                    <h2>Avant</h2>
+                    <div class="son" data-src="media/son/avant/avant-01.mp3" data-duration="198"></div>
+                    <div class="son" data-src="media/son/avant/avant-02.mp3" data-duration="298"></div>         
+               </div>
+               <div class="swiper-slide sound-section" data-section="dehors" data-section-url="section-02.html">
+                    <h2>Dehors</h2>
+                    <div class="son" data-src="media/son/avant/avant-01.mp3" data-duration="198"></div>
+                    <div class="son" data-src="media/son/avant/avant-02.mp3" data-duration="298"></div>         
+               </div>
+               <div class="swiper-slide sound-section" data-section="dedans" data-section-url="section-03.html">
+                    <h2>Dedans</h2>
+                    <div class="son" data-src="media/son/avant/avant-01.mp3" data-duration="198"></div>
+                    <div class="son" data-src="media/son/avant/avant-02.mp3" data-duration="298"></div>         
+               </div>
+            </div>
+        </div>
+        <div class="swiper-scrollbar"></div>  
 
-       <div class="son" data-src="media/son/01.mp3">1</div>
-       <div class="son" data-src="media/son/02.mp3">2</div>
+
+        <div id="sections">
+            <section id="home"></section>
+            <section id="avant"></section>
+            <section id="dehors"></section>
+            <section id="dedans"></section>
+            <section id="about"></section>
+        </div>
+        
             
-       <button id="test">test</button>
         <!-- libs -->
         <script type="text/javascript" src="js/libs/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="js/libs/plugins.js"></script>
         <script type="text/javascript" src="js/bv/video.js"></script>
         <script type="text/javascript" src="js/bv/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/bv/bigvideo.js"></script>
         <script type="text/javascript" src="js/me/mediaelement-and-player.min.js"></script>
         
         <!-- app -->
-        <script src="js/app/video.js"></script>
-        <script src="js/app/sound.js"></script>
-        <script src="js/app/init.js"></script>
+        
+        <script type="text/javascript" src="js/app/sound.js"></script>
+        <script type="text/javascript" src="js/app/texte.fragments.js"></script>
+        <script type="text/javascript" src="js/app/texte.js"></script>
+        <script type="text/javascript" src="js/app/mouse.js"></script>
+        <script type="text/javascript" src="js/app/pages.js"></script>
+        <script type="text/javascript" src="js/app/video.js"></script>
+
+        <script type="text/javascript" src="js/app/_home.js"></script>
+        <script type="text/javascript" src="js/app/_avant.js"></script>
+        <script type="text/javascript" src="js/app/_dehors.js"></script>
+        <script type="text/javascript" src="js/app/_dedans.js"></script>
+        <script type="text/javascript" src="js/app/_about.js"></script>        
+
+        <script type="text/javascript" src="js/app/init.js"></script>
+
     </body>
 </html>

@@ -1,12 +1,26 @@
 // SOUND
 var players = [], // sound players
-	current_player; // current sound player
+	current_player,
+	is_sound_initialized=false; // current sound player
 
 // VIDÉO	
 var BV; // big video holder
 
 // FRAGMENTS
-var $blocks; // big video holder
+var $blocks,
+	fragments_timeout;
+
+
+// SVG
+var $clip;	
+
+// TABLEAUX
+var $home,
+	$about,
+	$avant,
+	$dehors,
+	$dedans,
+	$current_page; 
 
 // COMMON
 var $body,
@@ -14,25 +28,26 @@ var $body,
 	wwidth,
 	wheight;
 
-
 $(function(){
 
 	$body = $('body');
 	$win = $(window);
+	$avant = $('#avant');
+	$dehors = $('#dehors');
+	$dedans = $('#dedans');
+	$home = $('#home');
+	$about = $('#about');
 
 	wwidth = $win.width();
 	wheight = $win.height();
 	
-	sound.init();	
-	mouse.init();	
-	texte.init();	
+	
+	//texte.init();	
+
+	$current_page = $home;
+
+	pages.init();
 	//video.init();
 
-
-	$('#test').on('click', function(){
-
-		//video.newBigVideo('media/video/dock.mp4')
-		vide.fade('out', function(){})
-	})
 
 })

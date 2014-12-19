@@ -1,17 +1,112 @@
-#test, button { position: absolute; z-index: 999}
+
+
+
+* {/* -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;*/ }            
 
 html,body { height: 100%}
 
 body { 
         font-family: 'bebas';
-        background: url(../img/IMG_4803.jpg) no-repeat; 
+        letter-spacing: 0.025em;
+        /*background:black;*/ 
         background-size: cover; 
         overflow: hidden;
+        color: white;
+
         }
     
-    .fragments .block {
+
+    #sections section {
+        position: absolute;
+        top:0; left: 0; right: 0; bottom: 0;
+        opacity: 0;
+        -moz-transition: opacity 200ms ease-out;
+        -webkit-transition: opacity 200ms ease-out;
+        transition: opacity 600ms ease-out;
+    }
+    #sections section.visible { opacity: 1; z-index: 5000}
+    
+    
+/* ------------------------------------------------------------------------------------ ACCUEIL */
+
+    #sons { 
+        position: fixed; 
+        height: 70px; 
+        padding-top: 10px;
+        left: 0; right: 0; bottom: 0px;
+
+        }
+        #sons .mejs-audio, #sons h2{
+            opacity: 0;
+            -moz-transition: opacity 200ms ease-out;
+            -webkit-transition: opacity 200ms ease-out;
+            transition: opacity 600ms ease-out;
+            } 
+            #sons:hover h2,
+            #sons:hover .mejs-audio { opacity: 1}
+        #sons h2 { display: block; margin: 0 0 0 31px; font-size: 20px;font-weight: 500}
+        .son { display: inline-block;}
+        .swiper-slide:first-child { padding-left: 50px}
+        .swiper-scrollbar { bottom: 10px; height: 10px; position: absolute; z-index: 56}
+        .mejs-time-float { display: none !important}
+
+
+
+/* ------------------------------------------------------------------------------------ ACCUEIL */
+
+#home {
+    
+}
+#preloader {
+    background:red; position:absolute; z-index: 13000
+}
+
+#home #menu {
+    font-size: 50px;
+    position: absolute;
+    bottom: 10px;
+    height: 120px;
+    width: 100%;
+    padding:0 35px;
+     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#home #menu h2 {
+    font-size: 50px;
+    margin: 0;
+    font-weight: 400
+}
+
+
+#home #menu a{
+    margin-right: 35px;
+}
+
+#home #menu #menu-about {
+    float: right;
+    margin-right: 0
+}
+
+
+#home #menu a {
+    text-decoration: none;
+    color:white;
+}
+
+
+/* ------------------------------------------------------------------------------------ AVANT */
+#avant .image {
+    position: absolute;
+    background-size: cover;
+    top:0; left: 0; right: 0; bottom: 0;
+}
+.fragments {
+    position: absolute;
+    z-index: 8999
+}
+.fragments .block {
         display: block;
-        max-width: 350px;
+        width: 350px;
         position: absolute;
         z-index: 3000;
         top:0; left: 0; right: 0; bottom: 0;
@@ -19,19 +114,52 @@ body {
     .fragments .text { 
         position: absolute; 
         opacity: 0;
+        width: 350px;
         -moz-transition: all 200ms ease-out;
         -webkit-transition: all 200ms ease-out;
         transition: all 600ms ease-out;
         color:white;
     }
     .fragments .visible { opacity: .9}
+
+
+/* ------------------------------------------------------------------------------------ DEHORS */
+body.dehors #sons {
+    /*background: #464646*/
+
+}
+#dehors { 
+    overflow: auto;
+    background-color: white;
+}
+
+#dehors .image { 
+/*position: absolute;*/
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    height: auto;
+    }
+
+    #dehors .image img { 
+    display: block;
+    width: 100%;
+    height: auto;
+    }
+
+
+
+/* ------------------------------------------------------------------------------------ DEDANS */
+body.dedans{
+    overflow: auto;
+    background-color: black;
+}
+#dedans { 
     
+    
+}
 
+#dedans > div{ width: 100%; margin: 0 auto}
+#dedans .clipimg { width: 100%; display: block;}
+#dedans article { background-attachment: fixed; background-size: 100% auto; background-position: 50% 50%; background-repeat: no-repeat; padding-bottom: 100px; width: 100%}
 
-    #sons { 
-        position: absolute; 
-        height: 70px; 
-        left: 0; right: 0; bottom: 10px;
-        }
-        .son:first-child { padding-left: 50px}
-        .swiper-scrollbar { bottom: 10px; height: 10px; position: absolute; z-index: 56}
